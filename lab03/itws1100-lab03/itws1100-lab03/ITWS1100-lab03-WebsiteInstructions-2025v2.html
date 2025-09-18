@@ -1,0 +1,136 @@
+<!--
+  ITWS1100 Lab 03 Website Instructions (2025v2)
+  ------------------------------------------------
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="utf-8">
+   <title>Lab 03: Build Your Personal Website - ITWS1100 (2025v2)</title>
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+   <link rel="stylesheet" href="../../resource/ITWS1100-labs-2025v2.css">
+</head>
+
+<body>
+   <div class="lab-container">
+      <!-- Header section with lab icon and title -->
+      <header>
+         <img src="../../resource/images/itws_logo_globe_bw.png" alt="Lab Icon">
+         <div>
+            <h1>Lab 03: Build Your Personal Website</h1>
+            <div class="highlight">Course: ITWS1100 &mdash; Fall 2025</div>
+         </div>
+      </header>
+
+      <!-- DevOps and setup instructions for students -->
+      <h2>DevOps &amp; Lab Setup</h2>
+      <ol>
+         <li>Start this lab by creating a new branch called <code>lab03</code> in your GitHub repository.</li>
+         <li>In your <code>iit</code> folder, create a new folder named <code>lab03</code>.</li>
+         <li>Ensure your <code>lab03</code> folder includes a <code>README.md</code> file and your Information
+            Architecture (IA) outlines from class.</li>
+         <li>Open your <code>iit</code> folder in VS Code using GitHub Desktop.</li>
+         <li>As you make changes, GitHub Desktop will show them in the left panel. Commit and push your changes
+            regularly.</li>
+         <li>Test your website locally using the Live Preview extension (<code>ms-vscode.live-server</code>).</li>
+         <li>When ready, deploy your code to your Azure instance or personal web server. Pull your changes down and test
+            at <code>FQDN/iit/index.html</code>.</li>
+      </ol>
+
+      <!-- Main lab instructions for students -->
+      <h2>Lab Instructions</h2>
+      <ol>
+         <li>
+            Create a personal Intro to ITWS website and deploy it to your personal web server.
+            <ul>
+               <li>Your website will be placed in the <code>iit</code> subdirectory (folder) of your Azure instance.
+                  This will be the root of your personal web pages.</li>
+               <li>Refer to the tutorials from Lab 1 to get started if needed.</li>
+            </ul>
+         </li>
+         <li>
+            Structure your site as follows:
+            <ul>
+               <li>Have a consistent header, navigation menu, content area, and footer across all pages.</li>
+               <li>All resources (CSS, images, etc.) must be kept in appropriate subfolders—no inline styles or new
+                  files in your website's root.</li>
+               <li>Required pages:
+                  <ul>
+                     <li><code>index.html</code> &mdash; Your landing (home) page. Edit your Lab 1 file to reflect your
+                        personal "brand".</li>
+                     <li><code>projects.html</code> or <code>labs.html</code> &mdash; A main page introducing your
+                        labs/projects. This should be in a subfolder as per your IA.</li>
+                     <li>Landing page for each lab (e.g., Lab 2 resume), with an introduction and links to your
+                        solutions.</li>
+                  </ul>
+               </li>
+            </ul>
+         </li>
+         <li>
+            Populate your projects/labs page with links to your labs, starting with your resume. Add new landing pages
+            as you complete more labs.
+         </li>
+         <li>
+            Ensure your code is valid, properly indented, and uses semantic HTML. Set the <code>&lt;title&gt;</code> tag
+            on each page.
+         </li>
+         <li>
+            Only the following files should be in your <code>iit</code> root: <code>index.html</code>,
+            <code>.htaccess</code>, <code>README.md</code>, and any files from Lab 1.
+         </li>
+         <li>
+            Security must be enabled for your <code>iit</code> website. Unsecured sites will lose points.
+         </li>
+         <li>
+            Test your site using the Live Preview extension in VS Code, then deploy and test on your personal website.
+         </li>
+         <li>
+            You will be graded using the following rubric (creativity is rewarded):
+            <ul>
+               <li>Validity: /10</li>
+               <li>Indentation: /10</li>
+               <li>Completeness: /50</li>
+               <li>Quality/Creativity: /30</li>
+            </ul>
+         </li>
+         <li>
+            An <a href="iit-html5-template.html" rel="noopener">HTML5 template</a> is provided to help you get started.
+         </li>
+         <li>
+            Use the web as a reference! (e.g., <a href="https://www.w3schools.com/" target="_blank"
+               rel="noopener">W3Schools</a>)
+         </li>
+      </ol>
+
+      <!-- Submission instructions for students -->
+      <h2>Submission</h2>
+      <ol>
+         <li>This lab is due by the date specified in the LMS assignment panel.</li>
+         <li>Update your <code>README.md</code> file in your root directory with comments about the lab, justifications
+            for your chosen methods/styles/tech, and the correct URL for your site (remove any passwords from Lab 1).
+         </li>
+         <li>Ensure you have a copy of your <code>iit</code> folder:
+            <ul>
+               <li>On your local machine for editing</li>
+               <li>In your GitHub repository</li>
+               <li>On your Azure instance</li>
+            </ul>
+         </li>
+         <li>Create a zip file of your <code>iit</code> repository named
+            <em><strong>yourRCSid</strong>-ITWS1100-Lab3.zip</em> and submit it to the Assignments area of LMS. (Include
+            all relevant HTML, CSS, README, and resources.)
+         </li>
+         <li>Include a <strong>working URL</strong> to your <code>iit</code> homepage in your README file.</li>
+         <li>Do NOT delete your branches until you have received your grade for this lab.</li>
+      </ol>
+
+      <!-- Teaching tip for students -->
+      <div class="highlight important">
+         <span>Tip:</span> Be creative! This website is your professional presence—make it stand out and reflect your
+         interests and skills.
+      </div>
+   </div>
+</body>
+
+</html>
