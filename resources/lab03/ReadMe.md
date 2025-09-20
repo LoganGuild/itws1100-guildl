@@ -13,15 +13,13 @@ In this lab we:
 
 Files Included:
 
-Working URL to the website()
+Outline for the website(Website Outline.txt)
 
-Outline for the website()
+HTML files for the website (aboutme.html, index.html, labs.html, personal.html, resume.html)
 
-resources folder for the website ()
+CSS files for the website(styles.css)
 
-HTML files for the website ()
+Read Me file (README.md)
 
-CSS files for the website()
-
-
+lab 01 and 02 zip files(guildl-lab01, guildl-lab02)
 
