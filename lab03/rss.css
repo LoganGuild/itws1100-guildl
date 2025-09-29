@@ -1,0 +1,74 @@
+rss {
+  font-family:'Times New Roman', Times, serif;
+    background-color: black;
+    color: white;
+    text-align: left;
+    font-size: 20px;
+    border-radius: 8px;
+    margin: 0px;
+    box-shadow: 0 px 8px rgba(0, 0, 0, 0.1);
+}
+
+title {
+  font-size: 1.6rem;
+  font-weight: bold;
+  margin-bottom: 8px;
+}
+
+description {
+  display: block;
+  font-size: 0.95rem;
+  color: white;
+  margin-bottom: 8px;
+}
+
+pubDate {
+display: block;
+  font-size: 0.95rem;
+  color: white;
+  margin-bottom: 8px;
+}
+
+item {
+  display: block;
+  background: black;
+  padding: 12px;
+  margin: 10px 0;
+  border-radius: 8px;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.1);
+}
+
+item title {
+  display: block;
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 6px;
+  color: #0b5ed7;
+}
+
+item {
+  display: block;
+  color: #0b5ed7;
+  font-size: 0.9rem;
+  margin-bottom: 4px;
+}
+
+item description {
+  display: block;
+  font-size: 0.95rem;
+  color: white;
+  margin-bottom: 4px;
+}
+item link {
+display: block;
+  font-size: 1rem;
+  margin-right: 10px;
+  margin-bottom: 4px;
+}
+item pubDate, item guid {
+  display: block;
+  font-size: 0.8rem;
+  margin-right: 10px;
+  margin-bottom: 4px;
+  color: white;
+}
