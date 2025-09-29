@@ -37,7 +37,7 @@ item title {
   font-size: 1.2rem;
   font-weight: 600;
   margin-bottom: 6px;
-  color: black ;
+  color: #0b5ed7;
 }
 
 item {
@@ -53,10 +53,16 @@ item description {
   color: #222;
   margin-bottom: 4px;
 }
-
-item link, item pubDate, item guid {
+item link {
+display: inline-block;
+  font-size: 0.8rem;
+  margin-right: 10px;
+  margin-bottom: 4px;
+}
+item pubDate, item guid {
   display: inline-block;
   font-size: 0.8rem;
   margin-right: 10px;
   margin-bottom: 4px;
+  color: black;
 }
