@@ -25,7 +25,7 @@ description {
 
 item {
   display: block;
-  background: #f0dcdc;
+  background: white;
   padding: 12px;
   margin: 10px 0;
   border-radius: 8px;
@@ -53,7 +53,14 @@ item description {
   margin-bottom: 6px;
 }
 
-pubDate, guid {
+pubDate {
+  display: inline-block;
+  font-size: 0.8rem;
+  color: black;
+  margin-right: 10px;
+}
+
+guid {
   display: inline-block;
   font-size: 0.8rem;
   color: black;
