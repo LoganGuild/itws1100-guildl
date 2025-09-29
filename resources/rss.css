@@ -1,7 +1,7 @@
 rss {
   font-family:'Times New Roman', Times, serif;
-    background-color: white;
-    color: black;
+    background-color: black;
+    color: white;
     text-align: left;
     font-size: 20px;
     border-radius: 8px;
@@ -19,13 +19,13 @@ title {
 description {
   display: block;
   font-size: 0.95rem;
-  color: black;
+  color: white;
   margin-bottom: 16px;
 }
 
 item {
   display: block;
-  background: white;
+  background: black;
   padding: 12px;
   margin: 10px 0;
   border-radius: 8px;
@@ -50,7 +50,7 @@ item {
 item description {
   display: block;
   font-size: 0.95rem;
-  color: #222;
+  color: white;
   margin-bottom: 4px;
 }
 item link {
@@ -64,5 +64,5 @@ item pubDate, item guid {
   font-size: 0.8rem;
   margin-right: 10px;
   margin-bottom: 4px;
-  color: black;
+  color: white;
 }
