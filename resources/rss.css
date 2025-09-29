@@ -54,13 +54,13 @@ item description {
   margin-bottom: 4px;
 }
 item link {
-display: inline-block;
+display: block;
   font-size: 0.8rem;
   margin-right: 10px;
   margin-bottom: 4px;
 }
 item pubDate, item guid {
-  display: inline-block;
+  display: block;
   font-size: 0.8rem;
   margin-right: 10px;
   margin-bottom: 4px;
