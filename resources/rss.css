@@ -37,31 +37,24 @@ item title {
   font-size: 1.2rem;
   font-weight: 600;
   margin-bottom: 6px;
+  color: black ;
 }
 
 item {
   display: block;
   color: #0b5ed7;
   font-size: 0.9rem;
-  margin-bottom: 8px;
+  margin-bottom: 4px;
 }
 
 item description {
   display: block;
   font-size: 0.95rem;
   color: #222;
-  margin-bottom: 6px;
-}
-
-item pubDate {
-  display: inline-block;
-  font-size: 0.8rem;
-  color: black;
-  margin-right: 10px;
   margin-bottom: 4px;
 }
 
-item guid {
+item link, item pubDate, item guid {
   display: inline-block;
   font-size: 0.8rem;
   color: black;
