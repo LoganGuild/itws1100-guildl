@@ -19,7 +19,14 @@ description {
   display: block;
   font-size: 0.95rem;
   color: white;
-  margin-bottom: 16px;
+  margin-bottom: 8px;
+}
+
+pubDate {
+display: block;
+  font-size: 0.95rem;
+  color: white;
+  margin-bottom: 8px;
 }
 
 item {
