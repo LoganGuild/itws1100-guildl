@@ -57,7 +57,6 @@ item description {
 item link, item pubDate, item guid {
   display: inline-block;
   font-size: 0.8rem;
-  color: black;
   margin-right: 10px;
   margin-bottom: 4px;
 }
