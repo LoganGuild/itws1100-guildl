@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/css" href="./resources/rss.css"?>
+<rss version="2.0">
+<channel>
+<title>RSS Lab Feed</title>
+<description>This is a feed for the Lab's on Logan's Website</description>
+<link>http://guildlrpi.eastus.cloudapp.azure.com/iit</link>
+<pubDate>Sat, 27 Sep 2025 13:15:00 +0000 </pubDate>
+<item>
+<title>Lab01</title>
+<description>Here is the first lab we did in ITWS1100, where we set up our personal website and github.</description>
+<link>http://guildlrpi.eastus.cloudapp.azure.com/iit/lab03/lab01.html</link>
+<guid>http://guildlrpi.eastus.cloudapp.azure.com/iit/lab03/lab01.html</guid>
+<pubDate>Sat, 27 Sep 2025 13:15:00 +0000 </pubDate>
+</item>
+<item>
+<title>Lab02</title>
+<description>Here is the second lab we did in ITWS1100, where we created a personal resume using html.</description>
+<link>http://guildlrpi.eastus.cloudapp.azure.com/iit/lab03/lab02.html</link>
+<guid>http://guildlrpi.eastus.cloudapp.azure.com/iit/lab03/lab02.html</guid>
+<pubDate>Sat, 27 Sep 2025 13:15:00 +0000 </pubDate>
+</item>
+<item>
+<title>Lab03</title>
+<description>Here is the third lab we did in ITWS1100, where we created our own personal website and designed it.</description>
+<link>http://guildlrpi.eastus.cloudapp.azure.com/iit/lab03/lab03.html</link>
+<guid>http://guildlrpi.eastus.cloudapp.azure.com/iit/lab03/lab03.html</guid>
+<pubDate>Sat, 27 Sep 2025 13:15:00 +0000 </pubDate>
+</item>
+<item>
+<title>Lab04</title>
+<description>Here is the fourth lab we did in ITWS1100, where we created a RSS feed for our labs.</description>
+<link>http://guildlrpi.eastus.cloudapp.azure.com/iit/lab03/lab04.html</link>
+<guid>http://guildlrpi.eastus.cloudapp.azure.com/iit/lab03/lab04.html</guid>
+<pubDate>Sat, 27 Sep 2025 13:15:00 +0000 </pubDate>
+</item>
+</channel>
+</rss>
