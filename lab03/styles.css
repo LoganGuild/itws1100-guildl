@@ -1,78 +1,203 @@
-h1 {
-    font-family:'Times New Roman', Times, serif;
-    background-color: rgb(0, 0, 0);
-    color: rgb(240, 220, 220);
-      text-align: center;
-      font-size: 40px;
-      margin: 0px;
-      border-radius: 8px;
-      box-shadow: 0 px 8px rgba(0, 0, 0, 0.1);
-      border: 2px solid #D6001C;
-    }
-
-h2 {
-    font-size: 22px;
-    text-align: center;
-    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
-}
-
-p {
-text-align: center;
-margin: 0px;
-padding: 0px;
-font-size: 30px;
-}
-
-    body {
+/* --- General Page Styles --- */
+body {
         border: 2.5px solid gray;
         margin: 0px;
         padding: 0px;
         background-color: rgb(240, 220, 220);
 
     }
-    h3 {
-    font-family:'Times New Roman', Times, serif;
+
+
+p {
+    text-align: center;
+    font-size: 18px; 
+}
+
+
+/* --- Reusable Components --- */
+
+.labinfo {
+    font-size: 20px;
+    text-align: center;
+}
+/* New style for the larger lab description text */
+.lab-description {
+   font-size: 24px; /* Increased from the default 18px */
+   font-style: italic;
+   font-weight: bold;
+   padding: 0 40px; /* Adds some side padding */
+}
+
+/* New style to add spacing to the RSS feed link */
+.rss-link {
+   margin-top: 30px; /* Adds space above the link */
+}
+
+.title-banner {
+    font-family: 'Times New Roman', Times, serif;
     background-color: rgb(0, 0, 0);
     color: rgb(240, 220, 220);
     text-align: center;
-    font-size: 30px;
+    margin: 0;
+    padding: 10px;
     border-radius: 8px;
-    margin: 0px;
-    box-shadow: 0 px 8px rgba(0, 0, 0, 0.1);
     border: 2px solid #D6001C;
-    }
-    h4{
-        font-family:'Times New Roman', Times, serif;
-    background-color: rgb(0, 0, 0);
-    color: rgb(240, 220, 220);
-    text-align: center;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); 
+}
+
+/* --- Navigation Hover Buttons (New Font) --- */
+
+nav ul {
+   list-style-type: none;
+   padding: 0;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+}
+
+nav ul li {
+   margin-bottom: 40px;
+}
+
+nav ul li a {
+   display: block;
+   width: 450px;
+   text-decoration: none;
+   color: #D93025;
+   background-color: transparent;
+   border: 2px solid #D93025;
+   padding: 30px 45px;
+   border-radius: 8px;
+   text-align: center;
+   position: relative;
+   overflow: hidden;
+   z-index: 1;
+   transition: color 0.6s ease-in-out;
+   font-size: 27px;
+   /* --- Font Styles Updated Below --- */
+   font-family: Georgia, 'Times New Roman', Times, serif;
+   font-style: italic;
+}
+
+/* Pseudo-element for the "fill" effect */
+nav ul li a::before {
+   content: '';
+   position: absolute;
+   bottom: 0;
+   left: 0;
+   width: 100%;
+   height: 0;
+   background-color: #D93025;
+   transition: height 0.6s ease-in-out;
+   z-index: -1;
+   border-radius: 6px;
+}
+
+/* Hover state for the button */
+nav ul li a:hover {
+   color: black;
+   border-color: #A52714;
+}
+
+/* Hover state for the pseudo-element (the "fill") */
+nav ul li a:hover::before {
+   height: 100%;
+}
+
+/* --- Heading Styles --- */
+
+h1 {
     font-size: 40px;
-    border-radius: 8px;
-    margin: 0px;
-    box-shadow: 0 px 8px rgba(0, 0, 0, 0.1);
-    border: 2px solid #D6001C;
-    }
+}
 
-    h5 {
-        font-size: 20px;
-        font-family: 'Courier New', Courier, monospace;
-        margin: 40px;
-        padding: 20px;
-    }
-
-    h6 {
-        font-family:'Times New Roman', Times, serif;
-    background-color: rgb(0, 0, 0);
-    color: rgb(240, 220, 220);
+h2 {
+    font-size: 22px;
     text-align: center;
-    font-size: 30px;
-    border-radius: 8px;
-    margin: 0px;
-    box-shadow: 0 px 8px rgba(0, 0, 0, 0.1);
-    border: 2px solid #D6001C;
-    }
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
 
-    .labinfo {
-        font-size: 20px;
-        text-align: center;
-    }
+h3 {
+    font-size: 30px;
+}
+
+h4 {
+    font-size: 26px;
+}
+
+h5 {
+    font-size: 20px;
+    font-family: 'Courier New', Courier, monospace;
+    margin: 40px;
+    padding: 20px;
+}
+
+h6 {
+    font-size: 18px;
+}
+
+/* Added for the code snippet example */
+pre {
+    background-color: #f4f4f4;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 15px;
+    text-align: left;
+    width: 80%;
+    margin: 20px auto; /* Centers the block */
+    overflow-x: auto; /* Adds scrollbar if content is too wide */
+}
+
+code {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 16px;
+    color: #333;
+}
+
+/* --- Back to Home Button --- */
+
+.back-to-home {
+   display: inline-block; /* Allows it to be centered easily */
+   width: 300px;
+   text-decoration: none;
+   color: #D93025;
+   background-color: transparent;
+   border: 2px solid #D93025;
+   padding: 20px 30px;
+   border-radius: 8px;
+   text-align: center;
+   position: relative;
+   overflow: hidden;
+   z-index: 1;
+   transition: color 0.6s ease-in-out;
+   font-size: 20px;
+   font-family: Georgia, 'Times New Roman', Times, serif;
+   font-style: italic;
+   margin-top: 40px; /* Adds space above the button */
+}
+
+/* Pseudo-element for the "fill" effect */
+.back-to-home::before {
+   content: '';
+   position: absolute;
+   bottom: 0;
+   left: 0;
+   width: 100%;
+   height: 0;
+   background-color: #D93025;
+   transition: height 0.6s ease-in-out;
+   z-index: -1;
+   border-radius: 6px;
+}
+
+/* Hover state for the button */
+.back-to-home:hover {
+   color: black;
+   border-color: #A52714;
+}
+
+/* Hover state for the pseudo-element (the "fill") */
+.back-to-home:hover::before {
+   height: 100%;
+}
