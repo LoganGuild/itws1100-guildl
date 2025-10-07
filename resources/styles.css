@@ -14,23 +14,20 @@ p {
 }
 
 
-/* --- Reusable Components --- */
-
 .labinfo {
     font-size: 20px;
     text-align: center;
 }
-/* New style for the larger lab description text */
+
 .lab-description {
-   font-size: 24px; /* Increased from the default 18px */
+   font-size: 24px;
    font-style: italic;
    font-weight: bold;
-   padding: 0 40px; /* Adds some side padding */
+   padding: 0 40px;
 }
 
-/* New style to add spacing to the RSS feed link */
 .rss-link {
-   margin-top: 30px; /* Adds space above the link */
+   margin-top: 30px;
 }
 
 .title-banner {
@@ -45,7 +42,7 @@ p {
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); 
 }
 
-/* --- Navigation Hover Buttons (New Font) --- */
+
 
 nav ul {
    list-style-type: none;
@@ -74,12 +71,10 @@ nav ul li a {
    z-index: 1;
    transition: color 0.6s ease-in-out;
    font-size: 27px;
-   /* --- Font Styles Updated Below --- */
    font-family: Georgia, 'Times New Roman', Times, serif;
    font-style: italic;
 }
 
-/* Pseudo-element for the "fill" effect */
 nav ul li a::before {
    content: '';
    position: absolute;
@@ -93,18 +88,18 @@ nav ul li a::before {
    border-radius: 6px;
 }
 
-/* Hover state for the button */
+
 nav ul li a:hover {
    color: black;
    border-color: #A52714;
 }
 
-/* Hover state for the pseudo-element (the "fill") */
+
 nav ul li a:hover::before {
    height: 100%;
 }
 
-/* --- Heading Styles --- */
+
 
 h1 {
     font-size: 40px;
@@ -137,7 +132,7 @@ h6 {
     font-size: 18px;
 }
 
-/* Added for the code snippet example */
+
 pre {
     background-color: #f4f4f4;
     border: 1px solid #ddd;
@@ -145,8 +140,8 @@ pre {
     padding: 15px;
     text-align: left;
     width: 80%;
-    margin: 20px auto; /* Centers the block */
-    overflow-x: auto; /* Adds scrollbar if content is too wide */
+    margin: 20px auto;
+    overflow-x: auto;
 }
 
 code {
@@ -154,10 +149,10 @@ code {
     font-size: 16px;
     color: #333;
 }
-/* --- Back to Home Button --- */
+
 
 .back-to-home {
-   display: inline-block; /* Allows it to be centered easily */
+   display: inline-block;
    width: 300px;
    text-decoration: none;
    color: #D93025;
@@ -173,10 +168,10 @@ code {
    font-size: 20px;
    font-family: Georgia, 'Times New Roman', Times, serif;
    font-style: italic;
-   margin-top: 40px; /* Adds space above the button */
+   margin-top: 40px;
 }
 
-/* Pseudo-element for the "fill" effect */
+
 .back-to-home::before {
    content: '';
    position: absolute;
@@ -190,13 +185,13 @@ code {
    border-radius: 6px;
 }
 
-/* Hover state for the button */
+
 .back-to-home:hover {
    color: black;
    border-color: #A52714;
 }
 
-/* Hover state for the pseudo-element (the "fill") */
+
 .back-to-home:hover::before {
    height: 100%;
 }
