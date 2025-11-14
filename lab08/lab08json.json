@@ -1,0 +1,48 @@
+{
+"labFiles": [
+    {
+        "number": "Lab01",
+        "description": "Starting Up Our Website&#129195;",
+        "page": "../lab03/lab01.html"
+
+
+    },
+    {
+        "number": "Lab02",
+        "description": "Resume&#129195;",
+        "page": "../lab03/lab02.html"
+
+    },
+    {
+        "number": "Lab03",
+        "description": "Creating Our Personal Website&#129195;",
+        "page": "../lab03/lab03.html"
+
+    },
+    {
+        "number": "Lab04",
+        "description": "Creating An RSS Feed&#129195;",
+        "page": "../lab03/lab04.html"
+
+    },
+    {
+        "number": "Lab05",
+        "description": "Javascript Form&#129195;",
+        "page": "../lab03/lab05.html"
+
+    },
+    {
+        "number": "Lab06",
+        "description": "JQuery Lab&#129195;",
+        "page": "../lab03/lab06.html"
+
+    },
+    {
+        "number": "Lab08",
+        "description": "JSON and AJAX Lab&#129195;",
+        "page": "../lab03/lab08.html"
+
+    }
+
+]
+}
