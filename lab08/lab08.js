@@ -2,18 +2,18 @@ $(document).ready(function() {
 
     $.ajax({
         type: "GET",
-        url: "lab08json.json",
+        url: "../lab08/lab08json.json",
         dataType: "json",
         success: function(responseData, status){
-            var output = "<ul>"; 
+            var output = "<nav><ul>"; 
                 $.each(responseData.labFiles, function(i, item){
                     output += "<li>";
                     output += '<a href="' + item.page + '">';
-                    output += item.number + " - " + item.description;
+                    output += '<span class="linkText">' + item.number + " - " + item.description + '</span>';
                     output += "</a>"
                     output += "</li>";
         });
-        output += "</ul>";   
+        output += "</ul></nav>";   
                 $('#projects').html(output);
     }, error: function(msg) {
         alert("There was a problem: " + msg.status + " " + msg.statusText)
@@ -21,4 +21,12 @@ $(document).ready(function() {
     }
 });
 
+});
+
+$(document).on("mouseenter", "#projects a", function () {
+  $(this).children(".linkText").fadeOut(200).fadeIn(500);
+});
+
+$(document).ready(function () {
+  $("#projects").hide().fadeIn(3000);
 });

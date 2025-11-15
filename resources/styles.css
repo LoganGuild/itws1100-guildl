@@ -105,7 +105,7 @@ h1 {
     font-size: 40px;
 }
 
-h2 {
+ h2 {
     font-size: 22px;
     text-align: center;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
@@ -133,7 +133,7 @@ h6 {
 }
 
 
-pre {
+#projects pre {
     background-color: #f4f4f4;
     border: 1px solid #ddd;
     border-radius: 5px;
@@ -144,7 +144,7 @@ pre {
     overflow-x: auto;
 }
 
-code {
+#projects code {
     font-family: 'Courier New', Courier, monospace;
     font-size: 16px;
     color: #333;
@@ -185,13 +185,32 @@ code {
    border-radius: 6px;
 }
 
-
 .back-to-home:hover {
    color: black;
    border-color: #A52714;
 }
 
-
 .back-to-home:hover::before {
    height: 100%;
+}
+
+#projects ul {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  justify-content: center;
+  gap: 100px;
+  padding: 0;
+  list-style: none;
+}
+
+#projects li {
+  width: 100%;
+}
+
+#projects {
+  display: flex;
+  justify-content: center;
+  align-items: center; 
+  flex-direction: column;
+  min-height: 100vh;
 }
