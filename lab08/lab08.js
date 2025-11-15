@@ -24,7 +24,7 @@ $(document).ready(function() {
 });
 
 $(document).on("mouseenter", "#projects a", function () {
-  $(this).children(".linkText").fadeOut(200).fadeIn(500);
+  $(this).children(".linkText").fadeOut(600).fadeIn(1750);
 });
 
 $(document).ready(function () {
