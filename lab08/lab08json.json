@@ -42,7 +42,19 @@
         "description": "JSON and AJAX Lab&#129195;",
         "page": "../lab03/lab8.html"
 
+    },
+    {
+        "number": "Lab09",
+        "description": "PHP and MYSQL Lab&#129195",
+        "page": "../lab03/lab09.html"
+        
+    },
+    {
+        "number": "Lab10",
+        "description": "Website Promotion&#129195",
+        "page": "../lab03/lab10.html"
     }
+
 
 ]
 }
