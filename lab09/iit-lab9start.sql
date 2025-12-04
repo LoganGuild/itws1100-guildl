@@ -16,3 +16,18 @@ VALUES (1, "Elizabeth", "1998"),
       "2001"
    ),
    (5, "Up in the Air", "2009");
+
+CREATE TABLE 'actors' (
+   'actorid' int(10) unsigned NOT NULL AUTO_INCREMENT,
+   'firstNames' varchar(100) NOT NULL,
+   'lastName' varchar(100) NOT NULL,
+   'dob' char(10) DEFAULT NULL,
+   PRIMARY KEY ('actorid')
+);
+
+INSERT INTO movies
+VALUES (1, "Robert", "Downey Jr", "1965-04-04"),
+(2, "Joe", "Keery", "1992-04-24"),
+(3, "Morgan", "Freeman", "1937-06-01"),
+(4, "Harrison", "Ford", "1942-07-13"),
+(5, "J.K.", "Simmons", "1955-01-09");
