@@ -18,8 +18,8 @@ if ($_SERVER["HTTP_HOST"] == 'localhost' || $_SERVER["HTTP_HOST"] == 'localhost:
    $GLOBALS['HOSTNAME'] = 'localhost';
    $GLOBALS['DB_NAME']  = 'iit';
    $GLOBALS['DB_HOST']  = 'localhost';
-   $GLOBALS['DB_USERNAME'] = 'itws1100';
-   $GLOBALS['DB_PASSWORD'] = 'IntroIsAwesome1'; // CHANGE THIS IN PRODUCTION
+   $GLOBALS['DB_USERNAME'] = 'guildl';
+   $GLOBALS['DB_PASSWORD'] = 'tXvRz81@qLpJsMEfW$'; // CHANGE THIS IN PRODUCTION
 }
 
 // Uncomment and configure for Google Cloud SQL if needed
