@@ -6,6 +6,10 @@ body {
   padding: 0;
 }
 
+#header {
+  text-align: left;
+  
+}
 
 h1 {
   position: relative;
