@@ -1,14 +1,16 @@
 <?php
-error_reporting(E_ALL);
-ini_set('display_errors', 1);
-
 include('includes/init.inc.php');
 include('includes/config.inc.php');
 include('includes/functions.inc.php');
 
 $dbOk = false;
 
-@$db = new mysqli( $GLOBALS['DB_HOST'], $GLOBALS['DB_USERNAME'], $GLOBALS['DB_PASSWORD'], $GLOBALS['DB_NAME']);
+@$db = new mysqli(
+    $GLOBALS['DB_HOST'],
+    $GLOBALS['DB_USERNAME'],
+    $GLOBALS['DB_PASSWORD'],
+    $GLOBALS['DB_NAME']
+);
 
 if ($db->connect_error) {
     echo '<div class="messages">Could not connect to the database. Error: ';
@@ -16,7 +18,6 @@ if ($db->connect_error) {
 } else {
     $dbOk = true;
 }
-
 
 function clean_input($value) {
     $value = trim($value ?? "");
@@ -34,8 +35,8 @@ $feature = "";
 
 if ($dbOk && $_SERVER['REQUEST_METHOD'] === 'POST') {
 
-    $name    = clean_input($_POST['name']    ?? "");
-    $email   = clean_input($_POST['email']   ?? "");
+    $name    = clean_input($_POST['name'] ?? "");
+    $email   = clean_input($_POST['email'] ?? "");
     $comment = clean_input($_POST['comment'] ?? "");
     $feature = clean_input($_POST['feature'] ?? "");
 
@@ -54,20 +55,23 @@ if ($dbOk && $_SERVER['REQUEST_METHOD'] === 'POST') {
     }
 
     if (empty($errors)) {
+        $commentToSave = $comment;
+        if ($feature !== "") {
+            $commentToSave .= "\n\nFeature suggestion: " . $feature;
+        }
 
-        $insQuery = "INSERT INTO siteComments (name, email, comment, feature, status)
-                     VALUES (?, ?, ?, ?, 'approved')";
+        $insQuery = "INSERT INTO siteComments (name, email, comment, status)
+                     VALUES (?, ?, ?, 'approved')";
 
         $statement = $db->prepare($insQuery);
 
         if (!$statement) {
             $errors[] = "Database error: unable to prepare insert.";
         } else {
-            $statement->bind_param("ssss",
+            $statement->bind_param("sss",
                 $name,
                 $email,
-                $comment,
-                $feature
+                $commentToSave
             );
 
             if ($statement->execute()) {
@@ -81,10 +85,11 @@ if ($dbOk && $_SERVER['REQUEST_METHOD'] === 'POST') {
         }
     }
 }
+
 $comments = [];
 
 if ($dbOk) {
-    $selQuery = "SELECT name, email, comment, feature, time
+    $selQuery = "SELECT name, email, comment, time
                  FROM siteComments
                  WHERE status = 'approved'
                  ORDER BY time DESC";
@@ -105,13 +110,12 @@ if ($dbOk) {
         $errors[] = "Database error: unable to load comments.";
     }
 }
+
+$title = "Comments";
 ?>
 
-<title>Comments Submission Form</title>
-
-<?php
-include('includes/head.inc.php');
-?>
+<title>Comment Submission Form</title>
+<?php include('includes/head.inc.php'); ?>
 
 <h1>Visitor Comments</h1>
 
@@ -135,17 +139,6 @@ include('includes/head.inc.php');
                 );
                 ?>
             </div>
-
-            <?php if (!empty($c['feature'])): ?>
-                <div>
-                    <em>Feature suggestion:</em>
-                    <?php
-                    echo nl2br(
-                        htmlspecialchars($c['feature'], ENT_QUOTES, 'UTF-8')
-                    );
-                    ?>
-                </div>
-            <?php endif; ?>
 
             <hr>
         </div>
@@ -215,8 +208,9 @@ include('includes/head.inc.php');
     </p>
 
     <p>
-        <button type="submit" name="saveComment">Submit Comment</button>
+        <button type="submit">Submit Comment</button>
     </p>
 </form>
 
 <?php include('includes/foot.inc.php'); ?>
+
