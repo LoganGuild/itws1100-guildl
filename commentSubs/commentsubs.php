@@ -60,7 +60,7 @@ if ($dbOk && $_SERVER['REQUEST_METHOD'] === 'POST') {
 
     if (empty($errors)) {
 
-        $insQuery = "INSERT INTO comments (name, email, comment, feature, status)
+        $insQuery = "INSERT INTO siteComments (name, email, comment, feature, status)
                      VALUES (?, ?, ?, ?, 'approved')";
 
         $statement = $db->prepare($insQuery);
