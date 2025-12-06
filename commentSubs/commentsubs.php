@@ -57,7 +57,7 @@ if ($dbOk && $_SERVER['REQUEST_METHOD'] === 'POST') {
 
     if ($comment === "") {
         $errors[] = "Comment is required.";
-    }<
+    }
 
     if (empty($errors)) {
         $commentToSave = $comment;
