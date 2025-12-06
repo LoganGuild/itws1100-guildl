@@ -62,6 +62,9 @@ if ($dbOk && $_SERVER['REQUEST_METHOD'] === 'POST') {
     if (empty($errors)) {
         $commentToSave = $comment;
 
+    if (!empty($feature)) {
+        $commentToSave .= "\n\nFeature suggestion: " . $feature;
+    }
         $insQuery = "INSERT INTO siteComments (name, email, comment, status)
                      VALUES (?, ?, ?, 'approved')";
 
@@ -70,11 +73,7 @@ if ($dbOk && $_SERVER['REQUEST_METHOD'] === 'POST') {
         if (!$statement) {
             $errors[] = "Database error: unable to prepare insert.";
         } else {
-            $statement->bind_param("sss",
-                $name,
-                $email,
-                $commentToSave
-            );
+            $statement->bind_param("sss", $name, $email, $commentToSave);
 
             if ($statement->execute()) {
                 $successMessage = "Thanks! Your comment has been submitted.";
