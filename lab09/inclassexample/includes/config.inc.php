@@ -9,8 +9,8 @@ if ($_SERVER["HTTP_HOST"] == 'localhost' || $_SERVER["HTTP_HOST"] == 'localhost:
    $GLOBALS['HOSTNAME'] = 'localhost';
    $GLOBALS['DB_NAME']  = 'iit';
    $GLOBALS['DB_HOST']  = 'localhost';
-   $GLOBALS['DB_USERNAME'] = 'root';
-   $GLOBALS['DB_PASSWORD'] = 'root';
+   $GLOBALS['DB_USERNAME'] = 'phpmyadmin';
+   $GLOBALS['DB_PASSWORD'] = 'GR3v27chirkvR9h';
 } else {
    // Production/Azure server settings
    // NOTE: Update these credentials for your production environment
@@ -18,8 +18,8 @@ if ($_SERVER["HTTP_HOST"] == 'localhost' || $_SERVER["HTTP_HOST"] == 'localhost:
    $GLOBALS['HOSTNAME'] = 'localhost';
    $GLOBALS['DB_NAME']  = 'iit';
    $GLOBALS['DB_HOST']  = 'localhost';
-   $GLOBALS['DB_USERNAME'] = 'guildl';
-   $GLOBALS['DB_PASSWORD'] = 'tXvRz81@qLpJsMEfW$'; // CHANGE THIS IN PRODUCTION
+   $GLOBALS['DB_USERNAME'] = 'phpmyadmin';
+   $GLOBALS['DB_PASSWORD'] = 'GR3v27chirkvR9h'; // CHANGE THIS IN PRODUCTION
 }
 
 // Uncomment and configure for Google Cloud SQL if needed
