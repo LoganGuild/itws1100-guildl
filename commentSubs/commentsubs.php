@@ -1,20 +1,34 @@
 <?php
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
+
 include('includes/init.inc.php');
 include('includes/config.inc.php');
 include('includes/functions.inc.php');
 
-// -------------------------------------------------------------------
-// Helper to clean user input
-// -------------------------------------------------------------------
+$dbOk = false;
+
+@$db = new mysqli(
+    $GLOBALS['DB_HOST'],
+    $GLOBALS['DB_USERNAME'],
+    $GLOBALS['DB_PASSWORD'],
+    $GLOBALS['DB_NAME']
+);
+
+if ($db->connect_error) {
+    echo '<div class="messages">Could not connect to the database. Error: ';
+    echo $db->connect_errno . ' - ' . $db->connect_error . '</div>';
+} else {
+    $dbOk = true;
+}
+
+
 function clean_input($value) {
     $value = trim($value ?? "");
     $value = strip_tags($value);
     return $value;
 }
 
-// -------------------------------------------------------------------
-// INITIAL VALUES
-// -------------------------------------------------------------------
 $errors = [];
 $successMessage = "";
 
@@ -23,18 +37,13 @@ $email   = "";
 $comment = "";
 $feature = "";
 
-// -------------------------------------------------------------------
-// HANDLE FORM SUBMISSION (POST)
-// -------------------------------------------------------------------
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+if ($dbOk && $_SERVER['REQUEST_METHOD'] === 'POST') {
 
-    // Get and clean form data
-    $name    = clean_input($_POST['name'] ?? "");
-    $email   = clean_input($_POST['email'] ?? "");
+    $name    = clean_input($_POST['name']    ?? "");
+    $email   = clean_input($_POST['email']   ?? "");
     $comment = clean_input($_POST['comment'] ?? "");
     $feature = clean_input($_POST['feature'] ?? "");
 
-    // ---- Server-side validation ----
     if ($name === "") {
         $errors[] = "Name is required.";
     }
@@ -50,15 +59,21 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
 
     if (empty($errors)) {
-        $sql = "INSERT INTO comments (name, email, comment, feature, status)
-                VALUES (?, ?, ?, ?, 'approved')";
 
-        $statement = $db->prepare($sql);
+        $insQuery = "INSERT INTO comments (name, email, comment, feature, status)
+                     VALUES (?, ?, ?, ?, 'approved')";
+
+        $statement = $db->prepare($insQuery);
 
         if (!$statement) {
-            $errors[] = "Database error: unable to prepare insert statement.";
+            $errors[] = "Database error: unable to prepare insert.";
         } else {
-            $statement->bind_param("ssss", $name, $email, $comment, $feature);
+            $statement->bind_param("ssss",
+                $name,
+                $email,
+                $comment,
+                $feature
+            );
 
             if ($statement->execute()) {
                 $successMessage = "Thanks! Your comment has been submitted.";
@@ -71,38 +86,33 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         }
     }
 }
-
-// -------------------------------------------------------------------
-// FETCH APPROVED COMMENTS (newest first)
-// -------------------------------------------------------------------
 $comments = [];
 
-$sql = "SELECT name, email, comment, feature, time
-        FROM comments
-        WHERE status = ?
-        ORDER BY time DESC";
+if ($dbOk) {
+    $selQuery = "SELECT name, email, comment, feature, time
+                 FROM comments
+                 WHERE status = 'approved'
+                 ORDER BY time DESC";
 
-$status = "approved";
+    $statement = $db->prepare($selQuery);
 
-$statement = $db->prepare($sql);
+    if ($statement) {
+        $statement->execute();
+        $result = $statement->get_result();
 
-if ($statement) {
-    $statement->bind_param("s", $status);
-    $statement->execute();
-    $result = $statement->get_result();
+        while ($row = $result->fetch_assoc()) {
+            $comments[] = $row;
+        }
 
-    while ($row = $result->fetch_assoc()) {
-        $comments[] = $row;
+        $result->free();
+        $statement->close();
+    } else {
+        $errors[] = "Database error: unable to load comments.";
     }
-
-    $result->free();
-    $statement->close();
-} else {
-    $errors[] = "Database error: unable to load comments.";
 }
 ?>
 
-<title>Comment Submission Form</title>
+<title>Comments Submission Form</title>
 
 <?php
 include('includes/head.inc.php');
@@ -112,7 +122,6 @@ include('includes/head.inc.php');
 
 <?php include('includes/menubody.inc.php'); ?>
 
-<!-- DISPLAY SECTION -->
 <?php if (!empty($comments)): ?>
 
     <?php foreach ($comments as $c): ?>
@@ -123,6 +132,7 @@ include('includes/head.inc.php');
             <span>
                 (<?php echo date("F j, Y, g:i a", strtotime($c['time'])); ?>)
             </span>
+
             <div>
                 <?php
                 echo nl2br(
@@ -152,7 +162,6 @@ include('includes/head.inc.php');
 
 <?php endif; ?>
 
-<!-- SUBMISSION FORM -->
 <h2>Leave a Comment</h2>
 
 <?php if (!empty($errors)): ?>
@@ -211,7 +220,7 @@ include('includes/head.inc.php');
     </p>
 
     <p>
-        <button type="submit">Submit Comment</button>
+        <button type="submit" name="saveComment">Submit Comment</button>
     </p>
 </form>
 
