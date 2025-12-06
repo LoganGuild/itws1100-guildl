@@ -198,16 +198,6 @@ $title = "Comments";
     </p>
 
     <p>
-        <label for="feature">Feature Suggestion (optional)</label><br>
-        <textarea
-            id="feature"
-            name="feature"
-            rows="3"
-            cols="40"
-        ><?php echo htmlspecialchars($feature, ENT_QUOTES, 'UTF-8'); ?></textarea>
-    </p>
-
-    <p>
         <button type="submit">Submit Comment</button>
     </p>
 </form>
