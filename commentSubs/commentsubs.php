@@ -52,13 +52,10 @@ if ($dbOk && $_SERVER['REQUEST_METHOD'] === 'POST') {
 
     if ($comment === "") {
         $errors[] = "Comment is required.";
-    }
+    }<
 
     if (empty($errors)) {
         $commentToSave = $comment;
-        if ($feature !== "") {
-            $commentToSave .= "\n\nFeature suggestion: " . $feature;
-        }
 
         $insQuery = "INSERT INTO siteComments (name, email, comment, status)
                      VALUES (?, ?, ?, 'approved')";
@@ -76,7 +73,7 @@ if ($dbOk && $_SERVER['REQUEST_METHOD'] === 'POST') {
 
             if ($statement->execute()) {
                 $successMessage = "Thanks! Your comment has been submitted.";
-                $name = $email = $comment = $feature = "";
+                $name = $email = $comment = "";
             } else {
                 $errors[] = "Database error: unable to save your comment.";
             }
@@ -166,7 +163,7 @@ $title = "Comments";
     </p>
 <?php endif; ?>
 
-<form method="post" action="commentsubs.php">
+<form method="post" action="commentsubs.php" onsubmit="return validate(this);">
     <p>
         <label for="name">Name *</label><br>
         <input
