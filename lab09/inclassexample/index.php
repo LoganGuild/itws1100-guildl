@@ -1,7 +1,7 @@
 <?php
-include('includes/init.inc.php'); // include the DOCTYPE and opening tags
-include('includes/config.inc.php'); // database configuration
-include('includes/functions.inc.php'); // functions
+include('includes/init.inc.php');
+include('includes/config.inc.php');
+include('includes/functions.inc.php');
 ?>
 <title>PHP &amp; MySQL - ITWS</title>
 
