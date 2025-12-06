@@ -8,12 +8,7 @@ include('includes/functions.inc.php');
 
 $dbOk = false;
 
-@$db = new mysqli(
-    $GLOBALS['DB_HOST'],
-    $GLOBALS['DB_USERNAME'],
-    $GLOBALS['DB_PASSWORD'],
-    $GLOBALS['DB_NAME']
-);
+@$db = new mysqli( $GLOBALS['DB_HOST'], $GLOBALS['DB_USERNAME'], $GLOBALS['DB_PASSWORD'], $GLOBALS['DB_NAME']);
 
 if ($db->connect_error) {
     echo '<div class="messages">Could not connect to the database. Error: ';
@@ -90,7 +85,7 @@ $comments = [];
 
 if ($dbOk) {
     $selQuery = "SELECT name, email, comment, feature, time
-                 FROM comments
+                 FROM siteComments
                  WHERE status = 'approved'
                  ORDER BY time DESC";
 
@@ -178,7 +173,7 @@ include('includes/head.inc.php');
     </p>
 <?php endif; ?>
 
-<form method="post" action="comments.php">
+<form method="post" action="commentsubs.php">
     <p>
         <label for="name">Name *</label><br>
         <input
