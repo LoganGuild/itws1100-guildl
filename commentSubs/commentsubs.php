@@ -129,6 +129,11 @@ $title = "Comments";
             <strong>
                 <?php echo htmlspecialchars($c['name'], ENT_QUOTES, 'UTF-8'); ?>
             </strong>
+
+            <span class="comment-email">
+        <?php echo htmlspecialchars($c['email'], ENT_QUOTES, 'UTF-8'); ?>
+            </span>
+
             <span>
                 (<?php echo date("F j, Y, g:i a", strtotime($c['time'])); ?>)
             </span>
