@@ -163,9 +163,9 @@ if ($havePost) {
          echo '</td></tr>';
          // Uncomment the following three lines to see the underlying
          // associative array for each record.
-          echo '<tr><td colspan="3" style="white-space: pre;">';
-          print_r($record);
-          echo '</td></tr>';
+          //echo '<tr><td colspan="3" style="white-space: pre;">';
+          //print_r($record);
+          //echo '</td></tr>';
       }
 
       $result->free();
