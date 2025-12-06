@@ -3,7 +3,6 @@
 function buildMenu() {
   // create an array of URLs and labels
 	$menu = array(
-		'comments' => 'siteComments'
 
 	);
 	// construct the menu, setting the current menu item 'selected' if 
