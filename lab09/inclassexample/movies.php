@@ -45,10 +45,15 @@
       if ($focusId == '') $focusId = '#title';
     }
 
-    if ($year != '' && !preg_match('/^\d{4}$/', $year)) {
-      $errors .= '<li>Year must be 4 digits (yyyy) or left blank</li>';
-      if ($focusId == '') $focusId = '#year';
+    if ($year == '') {
+      $errors .= '<li>Year may not be blank</li>';
+    if ($focusId == '') $focusId = '#year';
+    } 
+    else if (!ctype_digit($year) || strlen($year) != 4) {
+      $errors .= '<li>Year must be exactly 4 digits (yyyy)</li>';
+    if ($focusId == '') $focusId = '#year';
     }
+
 
     if ($errors != '') {
       echo '<div class="messages"><h4>Please correct the following errors:</h4><ul>';
@@ -94,7 +99,7 @@
       <div class="value">
         <input type="text" size="6" maxlength="4"
                value="<?php if ($havePost && $errors != '') { echo $year; } ?>"
-               name="year" id="year" /> <em>yyyy (optional)</em>
+               name="year" id="year" /> <em>yyyy</em>
       </div>
 
       <input type="submit" value="save" id="save" name="save" />
