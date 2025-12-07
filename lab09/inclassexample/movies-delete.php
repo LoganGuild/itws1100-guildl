@@ -18,7 +18,7 @@
       $movieId = (int) $_POST["id"];
       
       // Setup a prepared statement. 
-      $query = "delete from movies where movieid = ?";
+      $query = "DELETE FROM movies WHERE movieid = ?";
       $statement = $db->prepare($query);
       // bind our variable to the question mark
       $statement->bind_param("i",$movieId);
