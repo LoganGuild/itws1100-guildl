@@ -1,13 +1,12 @@
 <?php
-  include('includes/init.inc.php');      // DOCTYPE + opening tags
-  include('includes/config.inc.php');    // database configuration
-  include('includes/functions.inc.php'); // functions
+  include('includes/init.inc.php');
+  include('includes/config.inc.php');
+  include('includes/functions.inc.php');
 ?>
 <title>PHP &amp; MySQL - ITWS</title>
 
 <?php
   include('includes/head.inc.php');
-  // include global css, javascript, end the head and open the body
 ?>
 
 <h1>PHP &amp; MySQL</h1>
@@ -15,11 +14,8 @@
 <?php include('includes/menubody.inc.php'); ?>
 
 <?php
-  // We'll need a database connection both for retrieving records and for
-  // inserting them.
   $dbOk = false;
 
-  // Create a new database connection using values from config.inc.php
   @ $db = new mysqli(
       $GLOBALS['DB_HOST'],
       $GLOBALS['DB_USERNAME'],
@@ -34,10 +30,8 @@
     $dbOk = true;
   }
 
-  // Have we posted?
   $havePost = isset($_POST["save"]);
 
-  // Validation
   $errors = '';
   if ($havePost) {
 
@@ -51,7 +45,6 @@
       if ($focusId == '') $focusId = '#title';
     }
 
-    // year is optional, but if given must be 4 digits
     if ($year != '' && !preg_match('/^\d{4}$/', $year)) {
       $errors .= '<li>Year must be 4 digits (yyyy) or left blank</li>';
       if ($focusId == '') $focusId = '#year';
@@ -68,11 +61,9 @@
       echo '</script>';
     } else {
       if ($dbOk) {
-        // Trim for DB (no extra escaping needed because of prepared stmts)
         $titleForDb = trim($_POST["title"]);
         $yearForDb  = trim($_POST["year"]);
 
-        // Setup a prepared statement
         $insQuery = "insert into movies (`title`,`year`) values(?,?)";
         $statement = $db->prepare($insQuery);
         $statement->bind_param("ss", $titleForDb, $yearForDb);
@@ -134,10 +125,6 @@
       echo '</td><td>';
       echo '<img src="resources/delete.png" class="deleteMovie" width="16" height="16" alt="delete movie"/>';
       echo '</td></tr>';
-      // debug lines (keep commented)
-      // echo '<tr><td colspan="3" style="white-space: pre;">';
-      // print_r($record);
-      // echo '</td></tr>';
     }
 
     $result->free();
@@ -147,6 +134,5 @@
 </table>
 
 <?php include('includes/foot.inc.php');
-// footer info and closing tags
 ?>
 
