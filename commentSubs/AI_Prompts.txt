@@ -16,4 +16,4 @@ Prompt 3:
 I have a clean input function which is supposed to clean whitespace around an entry, as well as removing tags that help with formatting the database entries. Is there a need to apply this function on the comment entry?
 
 
-// Explained that using clean_input in this scenario for comments would be pretty redundant since I do a similar thing later in the code with nl2br command
+// Explained that using clean_input in this scenario for comments would be pretty redundant since I do a similar thing later in the code with nl2br command. It also let me know however that there would be an error without this code put in.

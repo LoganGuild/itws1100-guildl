@@ -42,6 +42,7 @@ if ($dbOk && $_SERVER['REQUEST_METHOD'] === 'POST') {
 
     $name    = clean_input($_POST['name'] ?? "");
     $email   = clean_input($_POST['email'] ?? "");
+    $comment = clean_input($_POST['comment'] ?? "");
 
     if ($name === "") {
         $errors[] = "Name is required.";
