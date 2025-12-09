@@ -1,4 +1,5 @@
 <?php
+// Used AI here to discover errors within the code when pushed to Azure. It pinpointed specific errors instead of showing error 500
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
 
@@ -23,7 +24,7 @@ if ($db->connect_error) {
 } else {
     $dbOk = true;
 }
-
+//Used AI to help with cleaning names and email addresses in the comment form
 function clean_input($value) {
     $value = trim($value ?? "");
     $value = strip_tags($value);
@@ -36,14 +37,11 @@ $successMessage = "";
 $name    = "";
 $email   = "";
 $comment = "";
-$feature = "";
 
 if ($dbOk && $_SERVER['REQUEST_METHOD'] === 'POST') {
 
     $name    = clean_input($_POST['name'] ?? "");
     $email   = clean_input($_POST['email'] ?? "");
-    $comment = clean_input($_POST['comment'] ?? "");
-    $feature = clean_input($_POST['feature'] ?? "");
 
     if ($name === "") {
         $errors[] = "Name is required.";
@@ -62,14 +60,11 @@ if ($dbOk && $_SERVER['REQUEST_METHOD'] === 'POST') {
     if (empty($errors)) {
         $commentToSave = $comment;
 
-    if (!empty($feature)) {
-        $commentToSave .= "\n\nFeature suggestion: " . $feature;
-    }
         $insQuery = "INSERT INTO siteComments (name, email, comment, status)
                      VALUES (?, ?, ?, 'approved')";
 
         $statement = $db->prepare($insQuery);
-
+// Used AI to help with this specific error that was occuring while testing 
         if (!$statement) {
             $errors[] = "Database error: unable to prepare insert.";
         } else {
@@ -111,8 +106,6 @@ if ($dbOk) {
         $errors[] = "Database error: unable to load comments.";
     }
 }
-
-$title = "Comments";
 ?>
 
 <title>Comment Submission Form</title>
@@ -133,13 +126,16 @@ $title = "Comments";
             <span class="comment-email">
         <?php echo htmlspecialchars($c['email'], ENT_QUOTES, 'UTF-8'); ?>
             </span>
-
+            
             <span>
-                (<?php echo date("F j, Y, g:i a", strtotime($c['time'])); ?>)
+                (<?php 
+                // Used AI to format date into timestamp
+                echo date("F j, Y, g:i a", strtotime($c['time'])); ?>)
             </span>
 
             <div>
                 <?php
+                // Used AI to format the comments exactly how they are entered. Used nl2br to convert newline to br tags
                 echo nl2br(
                     htmlspecialchars($c['comment'], ENT_QUOTES, 'UTF-8')
                 );

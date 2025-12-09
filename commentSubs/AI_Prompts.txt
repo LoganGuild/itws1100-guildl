@@ -1,0 +1,19 @@
+Prompt 1:
+
+I am currently having issues with a 500 server error and cannot figure out how to fix this error. Can you provide some help with determining what the error could be in commentsubs.php and help me fix it?
+
+// With this prompt it told me to put the error checking at the top of the commentsubs.php, as well as figuring out that I had an error when I was formatting the timestamp for the comment form
+
+Prompt 2:
+
+In my PhpMyAdmin database, what is the purpose of the status field and what is the purpose of putting it on this comment form?
+
+// Explained the purpose of a status field within a database and explained the different states that status can be for an entry into a database such as approved, pending, or rejected
+
+
+Prompt 3:
+
+I have a clean input function which is supposed to clean whitespace around an entry, as well as removing tags that help with formatting the database entries. Is there a need to apply this function on the comment entry?
+
+
+// Explained that using clean_input in this scenario for comments would be pretty redundant since I do a similar thing later in the code with nl2br command
