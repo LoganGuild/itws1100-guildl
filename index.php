@@ -1,6 +1,6 @@
 <html>
 <?php
-header('Location: index.html.shipped');
+header('Location: index.html');
 exit;
 ?>
 </html>
