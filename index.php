@@ -1,6 +1,6 @@
 <html>
 <?php
-header('Location: index.html');
+header('Location: /iit/index.html');
 exit;
 ?>
 </html>
