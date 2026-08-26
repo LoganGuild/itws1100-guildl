@@ -128,7 +128,7 @@ This enhanced jQuery lab provides an interactive learning environment for studen
 -  Real-time logging of all actions and events
 -  Color-coded messages (success, error, info)
 -  Clear button to reset console output
--  Automatic scrolling to latest messages
+-  Automatic scrolling to latest messages. 
 
 ### Browser Developer Tools
 
