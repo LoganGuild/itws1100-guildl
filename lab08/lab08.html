@@ -1,22 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<script type="text/javascript" src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
-<script type="text/javascript" src="./lab08.js"></script>
-<link rel="stylesheet" href="../lab03/styles.css"/>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Lab 08 | JSON Project Archive</title>
+  <meta name="description" content="A JSON and AJAX-powered project archive by Logan Guild.">
+  <link rel="stylesheet" href="lab08.css">
+  <script src="jquery-3.6.1.min.js"></script>
+  <script src="lab08.js" defer></script>
 </head>
-<body>  
-  <header>
-      <h1 class="title-banner"><strong><em>Labs and Personal Projects</em></strong></h1>
-   </header>
-   <section>
-   <div id="projects"></div>
+<body>
+  <header class="lab-nav">
+    <a class="lab-brand" href="../index.html" aria-label="Return to Logan Guild portfolio">LG<span>.</span></a>
+    <div class="lab-nav-meta">
+      <span>ITWS 1100 / Lab 08</span>
+      <a href="../index.html#work">Back to portfolio <span aria-hidden="true">↗</span></a>
+    </div>
+  </header>
+
+  <main>
+    <section class="lab-hero">
+      <p class="eyebrow">JSON · AJAX · jQuery</p>
+      <h1>Project<br><em>archive.</em></h1>
+      <div class="hero-aside">
+        <p>
+          A compact archive rendered from structured JSON. The interface loads
+          project data asynchronously, then builds each card in the browser.
+        </p>
+        <div class="hero-stat">
+          <strong>02</strong>
+          <span>Working studies</span>
+        </div>
+      </div>
     </section>
-    <div style="text-align: center;">
-    <a href="../index.html" class="back-to-home">Back to Homepage</a>
-</div>
+
+    <section class="archive-section" aria-labelledby="archive-title">
+      <div class="archive-heading">
+        <div>
+          <p class="eyebrow">Selected labs</p>
+          <h2 id="archive-title">Web fundamentals,<br>put into practice.</h2>
+        </div>
+        <p>Every item below runs entirely in the browser and is compatible with static GitHub Pages hosting.</p>
+      </div>
+
+      <div id="projects" class="project-grid" aria-live="polite">
+        <p class="loading-message">Loading project data…</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="lab-footer">
+    <span>Logan Guild</span>
+    <a href="https://github.com/LoganGuild/itws1100-guildl" target="_blank" rel="noreferrer">View source repository ↗</a>
+  </footer>
 </body>
-<footer>
-      <h1 class="title-banner">&copy; 2025 Logan Guild</h1>
-   </footer>
 </html>

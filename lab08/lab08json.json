@@ -1,60 +1,18 @@
 {
-"labFiles": [
+  "labFiles": [
     {
-        "number": "Lab01",
-        "description": "Starting Up Our Website&#129195;",
-        "page": "../lab03/lab01.html"
-
-
+      "number": "Lab 05",
+      "title": "Interactive Form",
+      "description": "Client-side validation, focus management, and user feedback in a browser-only form demonstration.",
+      "page": "../lab05/lab5.html",
+      "technologies": ["HTML", "CSS", "JavaScript"]
     },
     {
-        "number": "Lab02",
-        "description": "Resume&#129195;",
-        "page": "../lab03/lab02.html"
-
-    },
-    {
-        "number": "Lab03",
-        "description": "Creating Our Personal Website&#129195;",
-        "page": "../lab03/lab03.html"
-
-    },
-    {
-        "number": "Lab04",
-        "description": "Creating An RSS Feed&#129195;",
-        "page": "../lab03/lab04.html"
-
-    },
-    {
-        "number": "Lab05",
-        "description": "Javascript Form&#129195;",
-        "page": "../lab03/lab05.html"
-
-    },
-    {
-        "number": "Lab06",
-        "description": "JQuery Lab&#129195;",
-        "page": "../lab03/lab06.html"
-
-    },
-    {
-        "number": "Lab08",
-        "description": "JSON and AJAX Lab&#129195;",
-        "page": "../lab03/lab8.html"
-
-    },
-    {
-        "number": "Lab09",
-        "description": "PHP and MYSQL Lab&#129195",
-        "page": "../lab03/lab09.html"
-        
-    },
-    {
-        "number": "Lab10",
-        "description": "Website Promotion&#129195",
-        "page": "../lab03/lab10.html"
+      "number": "Lab 06",
+      "title": "jQuery Learning Lab",
+      "description": "A hands-on environment for DOM manipulation, animation, dynamic content, and event delegation.",
+      "page": "../lab06/ITWS1100-Lab6-Student-Distribution/Lab6-Student-Distribution/lab6.html",
+      "technologies": ["jQuery", "DOM", "Events"]
     }
-
-
-]
+  ]
 }

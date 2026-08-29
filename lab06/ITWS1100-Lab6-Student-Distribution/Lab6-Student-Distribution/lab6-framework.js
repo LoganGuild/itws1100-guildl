@@ -106,8 +106,6 @@ $(document).ready(function () {
     $('#bodyBlock').on('click', '.check-work[data-problem="1"]', function() {
         const nameElement = $('.myName');
         const nameText = nameElement.text().trim();
-        const fontSize = nameElement.css('font-size');
-        const color = nameElement.css('color');
         
         if (nameText !== 'Your Name' && nameText.length > 0) {
             markProblemComplete(1);
@@ -180,6 +178,8 @@ $(document).ready(function () {
     });
     
     // Bonus Challenge B: Image Gallery
+    $('#galleryImage').attr('src', imageArray[0]);
+
     $('#nextImage').click(function() {
         imageIndex ++;
         if (imageIndex == totalImages) {
@@ -191,7 +191,7 @@ $(document).ready(function () {
     $('#prevImage').click(function() {
         imageIndex --;
         if (imageIndex == -1) {
-            imageIndex = totalImages
+            imageIndex = totalImages - 1;
         };
         updateGalleryImage();
     });

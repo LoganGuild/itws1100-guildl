@@ -1,69 +1,62 @@
-/* Lab 5 JavaScript File 
-   Place variables and functions in this file */
-window.onload = firstElementFocus;
-function firstElementFocus() {
-   const form = document.getElementById("addForm");
-   form.elements[0].focus();
-}
-
-function validate(formObj) {
-   // put your validation code here
-   // it will be a series of if statements
-
-   if (formObj.firstName.value == "") {
-      alert("You must enter a first name");
-      formObj.firstName.focus();
-      return false;
-   }
-   if (formObj.lastName.value == "") {
-      alert("You must enter a last name");
-      formObj.lastName.focus();
-      return false;
-   }
-   if (formObj.title.value == "") {
-      alert("You must enter a title");
-      formObj.title.focus();
-      return false;
-   }
-   if (formObj.org.value == "") {
-      alert("You must enter a organization");
-      formObj.org.focus();
-      return false;
-   }
-   if (formObj.pseudonym.value == "") {
-      alert("You must enter a nickname");
-      formObj.pseudonym.focus();
-      return false;
-   }
-   if (formObj.comments.value == "") {
-      alert("You must enter some comments");
-      formObj.comments.focus();
-      return false;
-   }
-   alert("Form has been submitted successfully!");
-   return true;
-}
-function clearComments() {
-   const form = document.getElementById('addForm');
-   if (form.comments.value.trim() === "Please enter your comments") {
-      form.comments.value = "";
-      alert("'Please enter your comments' has been removed!");
-   }
-}
-clearCommentsButton.onclick = clearComments;
-function restoreComments() {
+document.addEventListener("DOMContentLoaded", () => {
   const form = document.getElementById("addForm");
-  if (form.comments.value.trim() === "") {
-    form.comments.value = "Please enter your comments";
-  }
-}
+  const output = document.getElementById("output");
+  const comments = document.getElementById("comments");
 
-function findNickname() {
-const firstName = document.getElementById("firstName");
-const lastName = document.getElementById("lastName");
-const nickname = document.getElementById("pseudonym");
-if (firstName.value !== "" && lastName.value !== "") {
-   alert(firstName.value + " " + lastName.value + " is " + nickname.value);
-}
-}
-findNicknameButton.onclick = findNickname;
+  form.elements.firstName.focus();
+
+  function showMessage(message, type) {
+    output.textContent = message;
+    output.className = type;
+    output.hidden = false;
+  }
+
+  function validateForm(event) {
+    event.preventDefault();
+
+    const requiredFields = [
+      ["firstName", "first name"],
+      ["lastName", "last name"],
+      ["title", "title"],
+      ["org", "organization"],
+      ["pseudonym", "nickname"],
+      ["comments", "comment"],
+    ];
+
+    for (const [fieldName, label] of requiredFields) {
+      const field = form.elements[fieldName];
+      if (!field.value.trim()) {
+        showMessage(`Please enter a ${label} before validating the form.`, "error");
+        field.focus();
+        return;
+      }
+    }
+
+    showMessage(
+      "Validation complete. This static demonstration does not transmit or store your entry.",
+      "success",
+    );
+  }
+
+  function showNickname() {
+    const firstName = form.elements.firstName.value.trim();
+    const lastName = form.elements.lastName.value.trim();
+    const nickname = form.elements.pseudonym.value.trim();
+
+    if (!firstName || !lastName || !nickname) {
+      showMessage("Add a first name, last name, and nickname to try this interaction.", "error");
+      (!firstName ? form.elements.firstName : !lastName ? form.elements.lastName : form.elements.pseudonym).focus();
+      return;
+    }
+
+    showMessage(`${firstName} ${lastName} goes by “${nickname}.”`, "success");
+  }
+
+  form.addEventListener("submit", validateForm);
+  document.getElementById("findNicknameButton").addEventListener("click", showNickname);
+  document.getElementById("clearCommentsButton").addEventListener("click", () => {
+    comments.value = "";
+    comments.focus();
+    showMessage("The comments field has been cleared.", "success");
+  });
+});

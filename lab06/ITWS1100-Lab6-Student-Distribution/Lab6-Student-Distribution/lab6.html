@@ -16,6 +16,31 @@
 </head>
 
 <body>
+   <header class="lab-nav">
+      <a class="lab-brand" href="../../../index.html" aria-label="Return to Logan Guild portfolio">LG<span>.</span></a>
+      <div class="lab-nav-meta">
+         <span>ITWS 1100 / Lab 06</span>
+         <a href="../../../index.html#work">Back to portfolio <span aria-hidden="true">↗</span></a>
+      </div>
+   </header>
+
+   <main>
+      <section class="lab-hero">
+         <p class="eyebrow">jQuery · DOM · Event handling</p>
+         <h1>Interaction<br><em>workshop.</em></h1>
+         <div class="hero-aside">
+            <p>
+               Five progressive exercises exploring selectors, animation,
+               dynamic content, event delegation, and browser-side feedback.
+            </p>
+            <div class="hero-tech">
+               <span>05 exercises</span>
+               <span>Browser only</span>
+               <span>Interactive</span>
+            </div>
+         </div>
+      </section>
+
    <div id="bodyBlock">
 
       <!-- Progress Tracker -->
@@ -74,41 +99,6 @@
                <li>Check the Console tab for errors</li>
                <li>Use <code>$(selector).length</code> to verify elements exist</li>
             </ul>
-         </div>
-      </div>
-
-      <!-- Submission Requirements -->
-      <div id="submissionRequirements" class="info-section">
-         <h2>📋 IMPORTANT: Submission Requirements</h2>
-         <div class="requirements-grid">
-            <div class="requirement-box git">
-               <h3>🔧 Git Workflow</h3>
-               <ol>
-                  <li>Create branch: <code>git checkout -b lab6</code></li>
-                  <li>Complete all 5 problems</li>
-                  <li>Commit: <code>git add . && git commit -m "Complete Lab 6"</code></li>
-                  <li>Merge: <code>git checkout main && git merge lab6</code></li>
-                  <li>Push: <code>git push origin main</code></li>
-               </ol>
-            </div>
-            <div class="requirement-box deploy">
-               <h3>🌐 Deployment</h3>
-               <ul>
-                  <li>Deploy to your Azure Web App</li>
-                  <li>Test all problems on live site</li>
-                  <li>Update your website's landing page</li>
-                  <li>Add Lab 6 link to navigation</li>
-               </ul>
-            </div>
-            <div class="requirement-box submit">
-               <h3>📁 LMS Submission</h3>
-               <ul>
-                  <li>Update repository README.md</li>
-                  <li>ZIP entire repository folder</li>
-                  <li>Submit ZIP to LMS</li>
-                  <li>Include live site URL in submission</li>
-               </ul>
-            </div>
          </div>
       </div>
 
@@ -283,8 +273,7 @@
                <h3>Challenge B: Image Gallery</h3>
                <p>Create a simple image switcher:</p>
                <div id="imageGallery">
-                  <img id="galleryImage" src=imageArray[imageIndex]
-                     alt="Gallery Image">
+                  <img id="galleryImage" alt="Current gallery selection">
                   <div id="imageControls">
                      <button type="button" id="prevImage">Previous</button>
                      <button type="button" id="nextImage">Next</button>
@@ -318,6 +307,7 @@
       </div>
 
    </div>
+   </main>
 
    <!-- Success Modal -->
    <div id="successModal" class="modal">
@@ -327,6 +317,11 @@
          <p id="successMessage"></p>
       </div>
    </div>
+
+   <footer class="lab-footer">
+      <span>Logan Guild</span>
+      <span>jQuery interaction study · 2026</span>
+   </footer>
 
 </body>
 

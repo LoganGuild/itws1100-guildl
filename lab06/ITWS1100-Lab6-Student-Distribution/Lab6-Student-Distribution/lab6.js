@@ -58,7 +58,7 @@ $(document).ready(function () {
     //
     // 🏁 STARTER TEMPLATE:
     $('#nameHeading').click(function() {
-        $('#nameHeading .myName').text('Logan Guild').css('font-variant', 'small-caps').css('color', 'red').css('font-size', '200%')
+        $('#nameHeading .myName').text('Logan Guild').css('font-variant', 'small-caps').css('color', '#ff775c').css('font-size', '200%')
         
         logToConsole('Name heading clicked - implement your solution!', 'info');
     });

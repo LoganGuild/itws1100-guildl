@@ -1,74 +1,110 @@
+:root {
+  --ink: #211322;
+  --paper: #f8f1e8;
+  --white: #fffaf5;
+  --muted: #746471;
+  --line: rgba(33, 19, 34, 0.15);
+  --accent: #ff775c;
+  --accent-dark: #a43829;
+  --accent-soft: #ffd9cf;
+}
+
 rss {
-  font-family:'Times New Roman', Times, serif;
-    background-color: black;
-    color: white;
-    text-align: left;
-    font-size: 20px;
-    border-radius: 8px;
-    margin: 0px;
-    box-shadow: 0 px 8px rgba(0, 0, 0, 0.1);
-}
-
-title {
-  font-size: 1.6rem;
-  font-weight: bold;
-  margin-bottom: 8px;
-}
-
-description {
+  min-height: 100vh;
   display: block;
-  font-size: 0.95rem;
-  color: white;
-  margin-bottom: 8px;
+  box-sizing: border-box;
+  padding: clamp(3rem, 8vw, 7rem) clamp(1.25rem, 6vw, 6rem);
+  background:
+    linear-gradient(rgba(255,255,255,.045) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,.045) 1px, transparent 1px),
+    var(--ink);
+  background-size: 72px 72px, 72px 72px, auto;
+  color: var(--white);
+  font-family: Inter, Arial, sans-serif;
 }
 
-pubDate {
-display: block;
-  font-size: 0.95rem;
-  color: white;
-  margin-bottom: 8px;
+channel {
+  max-width: 1100px;
+  display: block;
+  margin: 0 auto;
 }
+
+channel > title {
+  max-width: 850px;
+  display: block;
+  color: var(--white);
+  font: 400 clamp(3.2rem, 7vw, 7rem)/.9 Georgia, "Times New Roman", serif;
+  letter-spacing: -.06em;
+}
+
+channel > title::after {
+  content: ".";
+  color: var(--accent);
+}
+
+channel > description {
+  max-width: 620px;
+  display: block;
+  margin: 1.5rem 0 .6rem;
+  color: #d1c4ce;
+  font-size: 1rem;
+  line-height: 1.7;
+}
+
+channel > link,
+channel > pubDate {
+  display: block;
+  color: #a995a5;
+  font-size: .68rem;
+  line-height: 1.6;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+
+channel > link { color: var(--accent); }
 
 item {
-  display: block;
-  background: black;
-  padding: 12px;
-  margin: 10px 0;
-  border-radius: 8px;
-  box-shadow: 0 1px 4px rgba(0,0,0,0.1);
+  min-height: 230px;
+  display: grid;
+  grid-template-columns: minmax(190px, .55fr) minmax(280px, 1fr);
+  align-content: center;
+  gap: .65rem clamp(2rem, 7vw, 6rem);
+  margin-top: 1px;
+  padding: clamp(1.5rem, 4vw, 3rem);
+  background: var(--white);
+  color: var(--ink);
+  border-left: 5px solid transparent;
 }
+
+item:hover { border-left-color: var(--accent); background: var(--accent-soft); }
 
 item title {
+  grid-row: 1 / span 4;
+  align-self: center;
   display: block;
-  font-size: 1.2rem;
-  font-weight: 600;
-  margin-bottom: 6px;
-  color: #0b5ed7;
-}
-
-item {
-  display: block;
-  color: #0b5ed7;
-  font-size: 0.9rem;
-  margin-bottom: 4px;
+  font: 400 clamp(1.7rem, 3vw, 2.5rem)/1.05 Georgia, "Times New Roman", serif;
+  letter-spacing: -.035em;
 }
 
 item description {
   display: block;
-  font-size: 0.95rem;
-  color: white;
-  margin-bottom: 4px;
+  color: var(--muted);
+  line-height: 1.65;
 }
-item link {
-display: block;
-  font-size: 1rem;
-  margin-right: 10px;
-  margin-bottom: 4px;
-}
-item pubDate, item guid {
+
+item link,
+item guid,
+item pubDate {
   display: block;
-  font-size: 0.8rem;
-  margin-right: 10px;
-  margin-bottom: 4px;
-  color: white;
+  overflow-wrap: anywhere;
+  color: var(--accent-dark);
+  font-size: .67rem;
+  line-height: 1.55;
+}
+
+item guid { color: var(--muted); }
+
+@media (max-width: 700px) {
+  item { grid-template-columns: 1fr; }
+  item title { grid-row: auto; }
 }
