@@ -1164,8 +1164,7 @@
     animation: var(--animate-spin);
   }
   .cursor-default {
-    cursor: default;
-  }
+    }
   .cursor-text {
     cursor: text;
   }
