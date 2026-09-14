@@ -5755,3 +5755,44 @@ a {
     background-position: 0 0;
   }
 }
+
+/* Case studies */
+.case-studies-section {
+  background: var(--paper-deep);
+}
+.case-study-row {
+  grid-template-columns: 56px minmax(260px, 1fr) minmax(260px, 0.68fr) auto;
+  cursor: default;
+}
+.case-study-status {
+  color: var(--accent-dark);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  border: 1px solid color-mix(in srgb, var(--accent-dark) 35%, transparent);
+  border-radius: 999px;
+  justify-self: end;
+  padding: 0.45rem 0.7rem;
+  font-size: 0.62rem;
+  font-weight: 800;
+}
+@media (width <= 980px) {
+  .case-study-row {
+    grid-template-columns: 42px minmax(0, 1fr) auto;
+  }
+  .case-study-row .project-stack {
+    grid-column: 2;
+  }
+  .case-study-status {
+    grid-area: 1 / 3 / span 2;
+  }
+}
+@media (width <= 700px) {
+  .case-study-row {
+    grid-template-columns: 34px minmax(0, 1fr);
+  }
+  .case-study-status {
+    grid-area: auto;
+    grid-column: 2;
+    justify-self: start;
+  }
+}
