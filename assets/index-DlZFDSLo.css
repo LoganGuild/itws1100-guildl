@@ -5761,7 +5761,7 @@ a {
 }
 .case-study-row {
   grid-template-columns: 56px minmax(260px, 1fr) minmax(260px, 0.68fr) auto;
-  cursor: default;
+  cursor: pointer;
 }
 .case-study-status {
   color: var(--accent-dark);
